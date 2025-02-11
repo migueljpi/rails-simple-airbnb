@@ -1,0 +1,11 @@
+<script>
+  console.log("Latitude: <%= latitude %>, Longitude: <%= longitude %>");  // Check if values are passed
+  mapboxgl.accessToken = '<%= ENV['MAPBOX_ACCESS_TOKEN'] %>';  // Access your Mapbox token here
+
+  const map = new mapboxgl.Map({
+    container: 'map', // The ID of the map container
+    style: 'mapbox://styles/mapbox/streets-v11', // Choose the Mapbox style
+    center: [<%= longitude %>, <%= latitude %>], // Use the passed coordinates
+    zoom: 15 // Set the zoom level
+  });
+</script>
